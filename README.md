@@ -38,17 +38,19 @@ Gemini LLM API
 ## Response Returned to Frontend
 🧠 Backend Setup (FastAPI + RAG)
 📁 Step 1: Create Backend Folder
-mkdir gemini-chat-backend
-cd gemini-chat-backend
-🐍 Step 2: Create Virtual Environment
-python -m venv venv
-Activate Environment
-Windows
 
-venv\Scripts\activate
-Mac/Linux
+## cmd Command
+`mkdir gemini-chat-backend`
+`cd gemini-chat-backend`
 
-source venv/bin/activate
+## 🐍 Step 2: Create Virtual Environment
+`python -m venv venv`
+## Activate Environment
+### Windows
+(venv\Scripts\activate)
+
+### Mac/Linux
+(source venv/bin/activate)
 📦 Step 3: Install Required Libraries
 pip install fastapi uvicorn python-dotenv
 pip install sentence-transformers
