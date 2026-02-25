@@ -40,9 +40,10 @@ Gemini LLM API
 📁 Step 1: Create Backend Folder
 
 ## cmd Command
-```bash
+
+(```bash
 mkdir gemini-chat-backend
-cd gemini-chat-backend
+cd gemini-chat-backend)
 
 ## 🐍 Step 2: Create Virtual Environment
 `python -m venv venv`
