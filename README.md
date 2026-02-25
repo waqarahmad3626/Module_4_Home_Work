@@ -274,5 +274,5 @@ The application does not use a database like MongoDB yet.
 ### Waqar Ahmad
 Full Stack Developer
 
-###⭐ If You Like This Project
+### ⭐ If You Like This Project
 Give it a ⭐ on GitHub!
