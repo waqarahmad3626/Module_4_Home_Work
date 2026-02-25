@@ -261,18 +261,18 @@ The application does not use a database like MongoDB yet.
 ### Questions asking 1
 <img src="Screenshot/Screenshot 2026-02-25 013658.png" width="800"/>
 
-### Questions asking 1
+### Questions asking 2
 <img src="Screenshot/Screenshot 2026-02-25 013708.png" width="800"/>
 
-### Questions asking 1
+### Questions asking 3
 <img src="Screenshot/Screenshot 2026-02-25 013716.png" width="800"/>
 
-### Questions asking 1
+### Questions asking 4
 <img src="Screenshot/Screenshot 2026-02-25 013725.png" width="800"/>
 
-👨‍💻 Author
-Waqar Ahmad
+## 👨‍💻 Author
+### Waqar Ahmad
 Full Stack Developer
 
-⭐ If You Like This Project
+###⭐ If You Like This Project
 Give it a ⭐ on GitHub!
