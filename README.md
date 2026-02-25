@@ -41,29 +41,41 @@ Gemini LLM API
 
 ## cmd Command
 
-(```bash
+```bash
 mkdir gemini-chat-backend
-cd gemini-chat-backend)
+cd gemini-chat-backend
+```
 
 ## 🐍 Step 2: Create Virtual Environment
-`python -m venv venv`
+```bash
+python -m venv venv
+```
 ## Activate Environment
 ### Windows
-(venv\Scripts\activate)
+
+```bash
+venv\Scripts\activate
+```
 
 ### Mac/Linux
-(source venv/bin/activate)
-📦 Step 3: Install Required Libraries
+```bash
+source venv/bin/activate
+```
+## 📦 Step 3: Install Required Libraries
+```bash
 pip install fastapi uvicorn python-dotenv
+pip install chromadb
 pip install sentence-transformers
 pip install scikit-learn
 pip install PyPDF2
 pip install openai-whisper
 pip install google-generativeai
 pip install python-multipart
-Or Create requirements.txt
+```
+ requirements.txt has been created just execute it
 fastapi
 uvicorn
+chromadb
 python-dotenv
 sentence-transformers
 scikit-learn
@@ -73,16 +85,24 @@ google-generativeai
 python-multipart
 Then run:
 
+```bash
 pip install -r requirements.txt
-🔐 Step 4: Create .env File
+```
+
+## 🔐 Step 4: Create .env File
 Create a file named:
 
 .env
+
 Add your Gemini API key:
 
 GEMINI_API_KEY=your_actual_api_key_here
+
 MODEL_NAME=gemini-1.5-flash
-🧩 Step 5: Load Environment Variables (config.py)
+
+## 🧩 Step 5: Load Environment Variables (config.py)
+
+```python
 import os
 from dotenv import load_dotenv
 import google.generativeai as genai
@@ -94,106 +114,120 @@ MODEL_NAME = os.getenv("MODEL_NAME")
 
 genai.configure(api_key=API_KEY)
 client = genai.GenerativeModel(MODEL_NAME)
-📂 Step 6: Add Documents
+```
+
+## 📂 Step 6: Add Documents
+
 Create a folder:
 
 documents/
-Add your:
+
+Add your all files:
 
 PDF files
 
 MP3 files
 
-▶️ Step 7: Run Backend
+## ▶️ Step 7: Run Backend to generate Model data
+
+Open VS Code editor
+move to the folder gemini-chat-backend 
+
+```bash
+python main.py
+```
+once Model generated then run this command in terminal in order to run API server
+```bash
 uvicorn main:app --reload
+```
 Backend runs at:
 
-http://127.0.0.1:8000
-🔁 How Backend Works
-Reads documents
+### -> http://127.0.0.1:8000
 
-Extracts text
+## 🔁 How Backend Works
+1) Reads documents
 
-Converts text → embeddings
+2) Extracts text
 
-Stores embeddings in vectorstore.pkl
+3) Converts text → embeddings
 
-When a question is asked:
+4) Stores embeddings in vectorstore.pkl
 
-Convert question → embedding
+5) When a question is asked:
 
-Perform cosine similarity
+6) Convert question → embedding
 
-Retrieve best matching chunk
+7) Perform cosine similarity
 
-Send context + question to Gemini
+8) Retrieve best matching chunk
 
-Return generated answer
+9) Send context + question to Gemini
 
-💻 Frontend Setup (React + Bootstrap)
-📁 Step 1: Create React App
-npx create-react-app waqar-chat-frontend
-cd waqar-chat-frontend
-📦 Step 2: Install Required Libraries
+10) Return generated answer
+
+# 💻 Frontend Setup (React + Bootstrap)
+
+## 📁 Step 1: Create React App
+
+```bash
+cd gemini-chat-frontend
+```
+
+## 📦 Step 2: Install Required Libraries
+```bash
+npm install
 npm install bootstrap
 npm install bootstrap-icons
 npm install react-markdown
 npm install uuid
-🧩 Step 3: Import Bootstrap
-In src/index.js:
+```
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
-🔗 Step 4: Connect to Backend
-In App.js:
-
-fetch("http://127.0.0.1:8000/ask", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ question: input }),
-});
 ▶️ Step 5: Run Frontend
 npm start
 App runs at:
 
-http://localhost:3000
-🧠 How Model “Training” Works
-This project does NOT fine-tune the LLM.
+### -> http://localhost:3000
 
-Instead, it uses Retrieval Augmented Generation (RAG):
+## 🧠 How Model “Training” Works
+1) This project does NOT fine-tune the LLM.
 
-Documents are embedded
+2) Instead, it uses Retrieval Augmented Generation (RAG):
 
-Embeddings are stored
+3) Documents are embedded
 
-User question is embedded
+4) Embeddings are stored
 
-Most similar chunk is retrieved
+5) User question is embedded
 
-Retrieved chunk is sent to Gemini
+6) Most similar chunk is retrieved
 
-Gemini generates contextual answer
+7) Retrieved chunk is sent to Gemini
 
-No retraining required.
+8) Gemini generates contextual answer
 
-📊 Why RAG Instead of Fine-Tuning?
+9) No retraining required.
+
+## 📊 Why RAG Instead of Fine-Tuning?
 Fine-Tuning	RAG
 Expensive	Cost-effective
 Static knowledge	Uses fresh documents
 Needs retraining	Just re-index documents
 Hard to update	Easy to update
-🛠 Commands Summary
-Backend
+
+## 🛠 Commands Summary
+### Backend
+```bash
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn main:app --reload
-Frontend
-npx create-react-app waqar-chat-frontend
-npm install bootstrap bootstrap-icons react-markdown uuid
+```
+## Frontend
+```bashpx create-react-app waqar-chat-frontend
+npm install npm install bootstrap bootstrap-icons react-markdown uuid
 npm start
-🔮 Future Improvements
-MongoDB persistent storage
+```
+## 🔮 Future Improvements
 
 User authentication
 
@@ -203,9 +237,26 @@ Streaming responses
 
 Hybrid search (Vector + BM25)
 
+## 💾 Chat Persistence (History Storage)
+This project includes chat history persistence for 30 days.
+
+## 🧠 How Chat History Works
+The application does not use a database like MongoDB yet.
+
+## Instead, it uses:
+
+✅ Local file-based storage
+
+✅ JSON / Pickle files
+
+✅ Browser localStorage (Frontend)
+
+✅ In-memory caching (FastAPI session)
+
+
 👨‍💻 Author
 Waqar Ahmad
-AI Full Stack Developer
+Full Stack Developer
 
 ⭐ If You Like This Project
 Give it a ⭐ on GitHub!
