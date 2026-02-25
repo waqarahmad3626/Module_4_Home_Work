@@ -258,6 +258,18 @@ The application does not use a database like MongoDB yet.
 ### 💬 Chat Interface
 <img src="Screenshot/Screenshot%202026-02-25%20013648.png" width="800"/>
 
+### Questions asking 1
+<img src="Screenshot/Screenshot 2026-02-25 013658.png" width="800"/>
+
+### Questions asking 1
+<img src="Screenshot/Screenshot 2026-02-25 013708.png" width="800"/>
+
+### Questions asking 1
+<img src="Screenshot/Screenshot 2026-02-25 013716.png" width="800"/>
+
+### Questions asking 1
+<img src="Screenshot/Screenshot 2026-02-25 013725.png" width="800"/>
+
 👨‍💻 Author
 Waqar Ahmad
 Full Stack Developer
