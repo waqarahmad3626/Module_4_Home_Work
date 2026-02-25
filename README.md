@@ -256,7 +256,7 @@ The application does not use a database like MongoDB yet.
 ## 📸 Screenshots
 
 ### 💬 Chat Interface
-<img src="Screenshot/Screenshot%202026-02-25%20013648.png)" width="800"/>
+<img src="Screenshot/Screenshot%202026-02-25%20013648.png" width="800"/>
 
 👨‍💻 Author
 Waqar Ahmad
