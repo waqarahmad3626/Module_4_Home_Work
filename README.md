@@ -253,6 +253,10 @@ The application does not use a database like MongoDB yet.
 
 ✅ In-memory caching (FastAPI session)
 
+## 📸 Screenshots
+
+### 💬 Chat Interface
+<img src="Screenshot/Screenshot%202026-02-25%20013648.png)" width="800"/>
 
 👨‍💻 Author
 Waqar Ahmad
